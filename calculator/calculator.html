@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calc">  
+        <div class="first">
+            <input type="text" name="text" id="display" ><br><br>
+            <button type="button" onclick="getValue('C')"  style="background-color:orangered"><b>C</b></button> 
+            <button type="button" onclick="getValue('%')"  style="background-color:orangered;"><b>%</b></button> 
+            <button type="button" onclick="getValue('*')"  style="background-color:orangered;"><b>*</b></button> 
+            <button type="button" onclick="getValue('del')" style="background-color: rgb(248, 4, 4);"><b>DEL</b></button> 
+        </div><br> 
+         
+        <div class="five">
+        <button type="button" onclick="getValue('7')" disabled><b>7</b></button> 
+            <button type="button" onclick="getValue('8')"><b>8</b></button> 
+            <button type="button" onclick="getValue('9')"><b>9</b></button> 
+            <button type="button" onclick="getValue('/')" style="background-color:orangered;"><b>/</b></button> 
+        </div><br> 
+
+        <div class="second"> 
+            <button type="button" onclick="getValue('4')"><b>4</b></button> 
+            <button type="button" onclick="getValue('5')"><b>5</b></button> 
+            <button type="button" onclick="getValue('6')"><b>6</b></button> 
+            <button type="button" onclick="getValue('+')" style="background-color: orangered;"><b>+</b></button> 
+        </div><br> 
+        <div class="third"> 
+            <button type="button" onclick="getValue('1')"><b>1</b></button> 
+            <button type="button" onclick="getValue('2')"><b>2</b></button> 
+            <button type="button" onclick="getValue('3')"><b>3</b></button> 
+            <button type="button" onclick="getValue('-')" style="background-color: orangered;"><b>-</b></button> 
+        </div><br> 
+        <div class="fourth"> 
+            <button type="button" onclick="getValue('00')"><b>00</b></button> 
+            <button type="button" onclick="getValue('0')"><b>0</b></button> 
+            <button type="button" onclick="getValue('.')"><b>.</b></button> 
+            <button type="button" onclick="getValue('=')" style="background-color: orangered;"><b>=</b></button> 
+        </div><br> 
+        </div> 
+        <script> 
+            function getValue(a) 
+            { 
+                const display=document.getElementById("display");
+                if(a=="C")
+            {
+                display.value="";
+            }
+            else if(a=="del")
+            {
+                display.value=(display.value).slice(0,-1)  // to evaluate mathematical expression
+            }
+                else if(a=="=")
+            {
+                display.value=eval(display.value)  // to evaluate mathematical expression
+            }
+               else
+            { 
+               display.value+=a;
+            }
+                console.log(a); 
+            } 
+        </script>
+</body>
+</html>
